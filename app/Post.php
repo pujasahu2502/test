@@ -11,7 +11,10 @@ class Post extends Model
     protected $table="posts";
 
     protected $fillable = [
-        'id', 'title', 'description','user_id','featured_image','slug'
+        'id', 'title', 'description','user_id','featured_image','slug','tag'
+    ];
+    protected $casts = [
+        'tag' => 'array',
     ];
     use SoftDeletes;
 }

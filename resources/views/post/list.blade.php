@@ -10,6 +10,13 @@
         @if((auth()->check() && auth()->user()->hasRole('editor')))
         <a class="btn btn-info pull-rigth" href="{{ route('post.create') }}">Create Post</a>
         @endif
+        <form method="POST" action="{{route('post.filter')}}">
+        @csrf
+            <input type='text' name="tag" id="tag">
+            <button type="submit" class="btn btn-primary">
+                {{ __('search') }}
+            </button>
+        </form>
             <div class="card">
                 <div class="card-header">Post List</div>
 

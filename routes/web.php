@@ -30,3 +30,4 @@ Route::group(['middleware' => 'role:admin'], function() {
  
  });    
  Route::resource('post', 'PostController');
+ Route::post('post', 'PostController@filterList')->name('post.filter');
